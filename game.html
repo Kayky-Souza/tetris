@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+            background-color: #000; /* Fundo escuro para combinar com o tema do Tetris */
+        }
+        .audio-controls {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .audio-button {
+            background-color: #0505A9; /* Cor do tema */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 0 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .audio-button:hover {
+            background-color: #03037A; /* Cor mais escura no hover */
+        }
+
+        .audio-button:disabled {
+            background-color: #444; /* Cor para o botão desativado */
+            cursor: not-allowed;
+        }
+
+        /* Estiliza a área de controles */
+        .content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        canvas {
+            border: 1px solid #fff;
+        }
+
+        #score {
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        /* Adiciona a animação de linha formada */
+        @keyframes lineFadeOut {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* Aplica a animação às linhas completas */
+        .line-fade-out {
+            animation: lineFadeOut 0.5s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <audio id="background-audio" preload="auto">
+        <source src="videos/Tetris (Game Boy) - 02. A-Type_128k.ogg" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <!-- Controles personalizados -->
+    <div class="audio-controls">
+        <button class="audio-button" id="play-btn">Play</button>
+        <button class="audio-button" id="pause-btn" disabled>Pause</button>
+    </div>
+    
+    <div>
+        <div id="score">Score: 0</div>
+        <canvas id="tetrisCanvas" width="300" height="600"></canvas>
+    </div>
+    <script src="tetris.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Over</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .game-over {
+            text-align: center;
+        }
+
+        .game-over h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        .game-over p {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #0505A9;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #03037A;
+        }
+
+        .button:active {
+            background-color: #01014A;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-over">
+        <h1>Mais sorte da próxima vez, ou apenas mais habilidade.</h1>
+        <p>Sua Pontuação Final: <span id="final-score">0</span></p>
+        <a href="index.html" class="button">Voltar ao Início</a>
+        <a href="game.html" class="button">Reiniciar Jogo</a>
+    </div>
+    
+    <script>
+        // Simula a obtenção da pontuação final
+        // Em um jogo real, isso seria dinâmico
+        const finalScore = score; // Substitua pelo valor real
+        document.getElementById('final-score').textContent = finalScore;
+    </script>
+</body>
+</html>
